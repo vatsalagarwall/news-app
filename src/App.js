@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './Components/Header';
+import Business from './Components/Business';
+import India from './Components/India';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Politics from './Components/Politics';
+import Science from './Components/Science';
+import Sports from './Components/Sports';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<Header/>}></Route>
+          <Route exact path='/business' element={<Business/>}></Route>
+          <Route exact path='/india' element={<India/>}></Route>
+          <Route exact path='/politics' element={<Politics/>}></Route>
+          <Route exact path='/science' element={<Science/>}></Route>
+          <Route exact path='/sports' element={<Sports/>}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
